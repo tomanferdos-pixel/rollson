@@ -3,7 +3,6 @@
 import { FormEvent, useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import FloatingTools from "./FloatingTools";
 import { useLanguage } from "./LanguageProvider";
 
 type MailMessage = {
@@ -254,7 +253,6 @@ export default function InboxConsole() {
         </section>
       </section>
       <Footer />
-      <FloatingTools />
     </main>
   );
 }

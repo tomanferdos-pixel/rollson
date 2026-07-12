@@ -2,7 +2,6 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FloatingTools from "@/components/FloatingTools";
 import { useLanguage } from "@/components/LanguageProvider";
 import { APP_NAME } from "@/lib/config";
 
@@ -80,7 +79,6 @@ export default function AboutPage() {
       </section>
 
       <Footer />
-      <FloatingTools />
     </main>
   );
 }
