@@ -165,16 +165,33 @@ export default function InboxConsole() {
         <section className="mail-console inbox-console" id="inbox" aria-label="Mailbox query console">
           <div className="console-header console-header-centered">
             <div className="console-header-main">
-              <img
-                className="console-avatar"
-                src="/ROLLSON.png"
-                alt="Rollson"
-                width={80}
-                height={80}
-              />
+              <a
+                className="console-avatar-link"
+                href="https://funpay.com/users/16210908/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ROLLSON on FunPay"
+              >
+                <img
+                  className="console-avatar"
+                  src="/ROLLSON.png"
+                  alt="Rollson"
+                  width={80}
+                  height={80}
+                />
+              </a>
               <div className="console-header-text">
                 <p className="label">{t("main.badge")}</p>
-                <h1>{t("main.title")}</h1>
+                <h1>
+                  <a
+                    className="console-title-link"
+                    href="https://funpay.com/users/16210908/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t("main.title")}
+                  </a>
+                </h1>
                 <p className="console-intro">{t("main.intro")}</p>
               </div>
             </div>

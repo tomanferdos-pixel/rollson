@@ -422,3 +422,26 @@ html{color-scheme:dark}
   .console-avatar{width:72px;height:72px}
   .console-header-main{gap:12px}
 }
+
+/* FunPay profile links on avatar + title */
+.console-avatar-link{
+  display:inline-flex;
+  border-radius:50%;
+  line-height:0;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.console-avatar-link:hover{
+  transform:scale(1.04);
+  box-shadow:0 0 0 3px #5a5a5a66;
+}
+.console-title-link{
+  color:inherit !important;
+  text-decoration:none !important;
+  -webkit-text-fill-color:inherit !important;
+  transition:opacity .15s ease;
+}
+.console-title-link:hover{
+  opacity:.88;
+  text-decoration:underline !important;
+  text-underline-offset:4px;
+}
