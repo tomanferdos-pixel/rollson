@@ -8,7 +8,7 @@ import { useLanguage } from "./LanguageProvider";
 import { APP_NAME } from "@/lib/config";
 
 type Props = {
-  active?: "inbox" | "about" | "status";
+  active?: "inbox" | "status";
   className?: string;
 };
 
@@ -29,15 +29,6 @@ export default function Header({ active = "inbox", className }: Props) {
       <nav className="top-actions" aria-label="Primary navigation">
         <ThemeToggle />
         <LanguageSwitcher />
-        {active !== "about" ? (
-          <Link className="about-nav-link" href="/about">
-            {t("nav.about")}
-          </Link>
-        ) : (
-          <Link className="about-nav-link" href="/">
-            {t("nav.inbox")}
-          </Link>
-        )}
         {active !== "status" ? (
           <Link className="nav-link strong" href="/status">
             {t("nav.status")}

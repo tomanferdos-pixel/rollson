@@ -15,7 +15,6 @@ export function isLocale(value: string | null | undefined): value is Locale {
 type Dict = Record<string, string>;
 
 const en: Dict = {
-  "nav.about": "About",
   "nav.status": "Status",
   "nav.inbox": "Inbox",
   "common.rights": "All Rights Reserved to",
@@ -45,34 +44,6 @@ const en: Dict = {
   "main.hideFullEmail": "Hide full email",
   "main.originalEmailHint": "Original email view. Links open in a new tab.",
   "main.noFullEmail": "No full email content available.",
-  "about.badge": "SECURE CODE DELIVERY · 2026",
-  "about.titlePrefix": "About",
-  "about.intro":
-    "Rollson is a secure service for retrieving verification codes by CD key. We focus on reliability, privacy, and a clean customer experience.",
-  "about.premiumQuality": "✓ Premium Quality",
-  "about.secureService": "✓ Secure Service",
-  "about.customerGuarantee": "✓ Customer Guarantee",
-  "about.positiveReviews": "Positive Reviews",
-  "about.reviewsText": "Customers trust Rollson for fast code access and dependable support.",
-  "about.premium": "Premium",
-  "about.serviceQuality": "Service Quality",
-  "about.qualityText": "Every key is handled carefully with attention, accuracy, and commitment.",
-  "about.guaranteed": "Guaranteed",
-  "about.customerConfidence": "Customer Confidence",
-  "about.guaranteeText": "We stand behind our service and work to keep lookups simple and reliable.",
-  "about.commitment": "OUR COMMITMENT",
-  "about.storyTitle": "Codes by key — built on trust.",
-  "about.storyP1":
-    "At Rollson, quality is more than a promise — it is the standard behind every lookup. Our goal is to make getting codes simple, professional, secure, and reliable.",
-  "about.storyP2":
-    "Long-term trust comes from honesty, clear communication, dependable support, and consistent service quality.",
-  "about.supportHours": "SUPPORT HOURS",
-  "about.hereToHelp": "We are here to help.",
-  "about.moroccoTime": "Morocco Time",
-  "about.moscowTime": "Moscow Time",
-  "about.supportNote": "Professional support with fast, clear communication.",
-  "about.finalTitle": "Quality. Trust. Confidence.",
-  "about.finalText": "Rollson — secure CD key mail query for verification codes.",
   "status.systemStatus": "System status",
   "status.overview": "System overview",
   "status.online": "Online",
@@ -93,7 +64,6 @@ const en: Dict = {
 
 const ru: Dict = {
   ...en,
-  "nav.about": "О сервисе",
   "nav.status": "Статус",
   "nav.inbox": "Почта",
   "common.rights": "Все права принадлежат",
@@ -123,34 +93,6 @@ const ru: Dict = {
   "main.hideFullEmail": "Скрыть письмо",
   "main.originalEmailHint": "Оригинальный вид письма. Ссылки открываются в новой вкладке.",
   "main.noFullEmail": "Полный текст письма недоступен.",
-  "about.badge": "БЕЗОПАСНАЯ ДОСТАВКА КОДОВ · 2026",
-  "about.titlePrefix": "О сервисе",
-  "about.intro":
-    "Rollson — безопасный сервис получения кодов подтверждения по CD-ключу. Надёжность, приватность и удобный интерфейс.",
-  "about.premiumQuality": "✓ Премиум качество",
-  "about.secureService": "✓ Безопасный сервис",
-  "about.customerGuarantee": "✓ Гарантия клиенту",
-  "about.positiveReviews": "Положительные отзывы",
-  "about.reviewsText": "Клиенты доверяют Rollson за быстрый доступ к кодам и стабильную поддержку.",
-  "about.premium": "Премиум",
-  "about.serviceQuality": "Качество сервиса",
-  "about.qualityText": "Каждый ключ обрабатывается внимательно, точно и ответственно.",
-  "about.guaranteed": "Гарантия",
-  "about.customerConfidence": "Доверие клиентов",
-  "about.guaranteeText": "Мы отвечаем за сервис и делаем получение кодов простым и надёжным.",
-  "about.commitment": "НАШИ ПРИНЦИПЫ",
-  "about.storyTitle": "Коды по ключу — на доверии.",
-  "about.storyP1":
-    "В Rollson качество — не просто обещание, а стандарт каждого запроса. Цель — просто, профессионально, безопасно.",
-  "about.storyP2":
-    "Долгосрочное доверие строится на честности, ясной коммуникации и стабильном качестве.",
-  "about.supportHours": "ЧАСЫ ПОДДЕРЖКИ",
-  "about.hereToHelp": "Мы на связи.",
-  "about.moroccoTime": "Время Марокко",
-  "about.moscowTime": "Московское время",
-  "about.supportNote": "Профессиональная поддержка: быстро и по делу.",
-  "about.finalTitle": "Качество. Доверие. Уверенность.",
-  "about.finalText": "Rollson — безопасный запрос почты по CD-ключу для кодов подтверждения.",
   "status.systemStatus": "Статус системы",
   "status.overview": "Обзор системы",
   "status.online": "Онлайн",
@@ -171,7 +113,6 @@ const ru: Dict = {
 
 const fr: Dict = {
   ...en,
-  "nav.about": "À propos",
   "nav.status": "État",
   "nav.inbox": "Boîte",
   "common.rights": "Tous droits réservés à",
@@ -196,7 +137,6 @@ const fr: Dict = {
 
 const es: Dict = {
   ...en,
-  "nav.about": "Acerca de",
   "nav.status": "Estado",
   "nav.inbox": "Bandeja",
   "common.rights": "Todos los derechos reservados a",
@@ -221,7 +161,6 @@ const es: Dict = {
 
 const ar: Dict = {
   ...en,
-  "nav.about": "حول",
   "nav.status": "الحالة",
   "nav.inbox": "البريد",
   "common.rights": "جميع الحقوق محفوظة لـ",
