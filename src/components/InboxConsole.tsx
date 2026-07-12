@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useLanguage } from "./LanguageProvider";
@@ -31,12 +31,10 @@ type QueryResult =
       message?: string;
     };
 
-function sanitizeHtml(html: string, dark: boolean): string {
-  const bg = dark ? "#0b0b0f" : "#ffffff";
-  const fg = dark ? "#f3f4f6" : "#111827";
+function sanitizeHtml(html: string): string {
   return `<!DOCTYPE html><html><head><meta charset="utf-8"/><base target="_blank"/><style>
-    body{margin:16px;font-family:Inter,system-ui,sans-serif;background:${bg};color:${fg};word-break:break-word;}
-    a{color:#6366f1}
+    body{margin:16px;font-family:Inter,system-ui,sans-serif;background:#222;color:#ececec;word-break:break-word;}
+    a{color:#bdbdbd}
     img{max-width:100%;height:auto}
   </style></head><body>${html}</body></html>`;
 }
@@ -48,14 +46,6 @@ export default function InboxConsole() {
   const [result, setResult] = useState<QueryResult | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
-  const [dark, setDark] = useState(false);
-
-  useEffect(() => {
-    const sync = () => setDark(document.documentElement.classList.contains("dark-mode"));
-    sync();
-    window.addEventListener("rollson-theme-change", sync);
-    return () => window.removeEventListener("rollson-theme-change", sync);
-  }, []);
 
   async function onSubmit(e?: FormEvent) {
     e?.preventDefault();
@@ -228,7 +218,7 @@ export default function InboxConsole() {
                             <iframe
                               className="full-email-frame"
                               title={`Full email: ${msg.subject || ""}`}
-                              srcDoc={sanitizeHtml(msg.bodyHtml, dark)}
+                              srcDoc={sanitizeHtml(msg.bodyHtml)}
                               sandbox="allow-popups allow-popups-to-escape-sandbox"
                             />
                           ) : (

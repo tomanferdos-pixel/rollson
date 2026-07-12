@@ -56,10 +56,6 @@ const en: Dict = {
   "status.minutes": "{value} minutes",
   "status.requestsPerMinute": "{value} requests per minute",
   "status.nextServer": "Next.js server",
-  "floating.darkMode": "Dark Mode",
-  "floating.lightMode": "Light Mode",
-  "floating.switchDark": "Switch to dark mode",
-  "floating.switchLight": "Switch to light mode",
 };
 
 const ru: Dict = {
@@ -105,10 +101,6 @@ const ru: Dict = {
   "status.minutes": "{value} минут",
   "status.requestsPerMinute": "{value} запросов в минуту",
   "status.nextServer": "Сервер Next.js",
-  "floating.darkMode": "Тёмная тема",
-  "floating.lightMode": "Светлая тема",
-  "floating.switchDark": "Включить тёмную тему",
-  "floating.switchLight": "Включить светлую тему",
 };
 
 const fr: Dict = {
@@ -131,8 +123,6 @@ const fr: Dict = {
   "main.copied": "Copié",
   "status.systemStatus": "État du système",
   "status.online": "En ligne",
-  "floating.darkMode": "Mode sombre",
-  "floating.lightMode": "Mode clair",
 };
 
 const es: Dict = {
@@ -155,8 +145,6 @@ const es: Dict = {
   "main.copied": "Copiado",
   "status.systemStatus": "Estado del sistema",
   "status.online": "En línea",
-  "floating.darkMode": "Modo oscuro",
-  "floating.lightMode": "Modo claro",
 };
 
 const ar: Dict = {
@@ -179,8 +167,6 @@ const ar: Dict = {
   "main.copied": "تم النسخ",
   "status.systemStatus": "حالة النظام",
   "status.online": "متصل",
-  "floating.darkMode": "الوضع الداكن",
-  "floating.lightMode": "الوضع الفاتح",
 };
 
 export const MESSAGES: Record<Locale, Dict> = { en, fr, es, ru, ar };

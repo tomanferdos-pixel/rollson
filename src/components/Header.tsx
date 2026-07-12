@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
-import ThemeToggle from "./ThemeToggle";
 import { useLanguage } from "./LanguageProvider";
 import { APP_NAME } from "@/lib/config";
 
@@ -27,7 +26,6 @@ export default function Header({ active = "inbox", className }: Props) {
         {APP_NAME}
       </div>
       <nav className="top-actions" aria-label="Primary navigation">
-        <ThemeToggle />
         <LanguageSwitcher />
         {active !== "status" ? (
           <Link className="nav-link strong" href="/status">
