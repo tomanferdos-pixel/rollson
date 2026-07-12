@@ -360,31 +360,51 @@ html{color-scheme:dark}
 .live-refresh-btn:disabled{opacity:.55;cursor:default}
 .auto-wait-hint{color:#a3a3a3!important;margin-top:8px!important;font-size:13px}
 
-/* Console header: avatar + text column */
+/* Console header: centered avatar + text */
+.console-header.console-header-centered,
+.console-header-centered{
+  display:flex;
+  justify-content:center;
+  text-align:center;
+}
 .console-header-main{
   display:flex;
+  flex-direction:column;
   align-items:center;
-  gap:18px;
+  justify-content:center;
+  gap:16px;
+  width:100%;
+  max-width:640px;
+  margin:0 auto;
+  text-align:center;
 }
 .console-header-text{
   display:flex;
   flex-direction:column;
+  align-items:center;
   justify-content:center;
-  min-width:0;
-  gap:6px;
+  gap:8px;
+  width:100%;
+  text-align:center;
 }
 .console-header-text .label{
   margin:0;
   line-height:1.2;
+  text-align:center;
+  width:100%;
 }
 .console-header-text h1{
   margin:0 !important;
-  line-height:1.2 !important;
+  line-height:1.25 !important;
   padding:0;
+  text-align:center;
+  width:100%;
 }
 .console-header-text .console-intro{
-  margin:0 !important;
-  line-height:1.45;
+  margin:0 auto !important;
+  line-height:1.5;
+  text-align:center;
+  max-width:36em;
 }
 .console-avatar{
   width:80px;
@@ -399,7 +419,6 @@ html{color-scheme:dark}
   background:#2a2a2a;
 }
 @media (max-width:560px){
-  .console-header-main{gap:14px}
-  .console-avatar{width:68px;height:68px}
+  .console-avatar{width:72px;height:72px}
+  .console-header-main{gap:12px}
 }
-

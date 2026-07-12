@@ -163,7 +163,7 @@ export default function InboxConsole() {
       <Header active="inbox" />
       <section className="inbox-center container">
         <section className="mail-console inbox-console" id="inbox" aria-label="Mailbox query console">
-          <div className="console-header">
+          <div className="console-header console-header-centered">
             <div className="console-header-main">
               <img
                 className="console-avatar"
