@@ -31,6 +31,11 @@ const en: Dict = {
   "main.noRecentMail": "No recent mail",
   "main.noRecentMailText":
     "No inbox messages were found inside the active query window.",
+  "main.autoRefreshOn": "Live updates every 8s",
+  "main.autoRefreshing": "Checking for new mail…",
+  "main.lastChecked": "last check {time}",
+  "main.refreshNow": "Refresh",
+  "main.autoWaitHint": "Stay on this page — new codes will appear automatically.",
   "main.mailbox": "Mailbox",
   "main.window": "Window",
   "main.messages": "Messages",
@@ -76,6 +81,11 @@ const ru: Dict = {
   "main.noRecentMail": "Нет свежей почты",
   "main.noRecentMailText":
     "В активном окне запроса писем в ящике не найдено.",
+  "main.autoRefreshOn": "Автообновление каждые 8 с",
+  "main.autoRefreshing": "Проверяем новые письма…",
+  "main.lastChecked": "проверка {time}",
+  "main.refreshNow": "Обновить",
+  "main.autoWaitHint": "Оставайтесь на странице — коды появятся сами.",
   "main.mailbox": "Ящик",
   "main.window": "Окно",
   "main.messages": "Письма",

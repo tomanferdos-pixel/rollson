@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useLanguage } from "./LanguageProvider";
@@ -31,6 +31,9 @@ type QueryResult =
       message?: string;
     };
 
+/** Poll while inbox is open — under rate limit (30/min). */
+const POLL_INTERVAL_MS = 8_000;
+
 function sanitizeHtml(html: string): string {
   return `<!DOCTYPE html><html><head><meta charset="utf-8"/><base target="_blank"/><style>
     body{margin:16px;font-family:Inter,system-ui,sans-serif;background:#222;color:#ececec;word-break:break-word;}
@@ -42,33 +45,88 @@ function sanitizeHtml(html: string): string {
 export default function InboxConsole() {
   const { t } = useLanguage();
   const [cdKey, setCdKey] = useState("");
+  const [activeKey, setActiveKey] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
   const [result, setResult] = useState<QueryResult | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const [lastCheckedAt, setLastCheckedAt] = useState<Date | null>(null);
+  const inFlight = useRef(false);
+
+  const fetchInbox = useCallback(
+    async (key: string, mode: "open" | "poll") => {
+      if (inFlight.current) return;
+      inFlight.current = true;
+      if (mode === "open") {
+        setLoading(true);
+        setResult(null);
+        setCopiedId(null);
+        setExpanded({});
+      } else {
+        setRefreshing(true);
+      }
+
+      try {
+        const res = await fetch("/api/query", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ cdKey: key }),
+          cache: "no-store",
+        });
+        const data = (await res.json()) as QueryResult;
+        setResult(data);
+        setLastCheckedAt(new Date());
+        if (data.ok) {
+          setActiveKey(key);
+        } else if (mode === "open") {
+          setActiveKey(null);
+        }
+      } catch {
+        if (mode === "open") {
+          setResult({ ok: false, message: t("main.networkError") });
+          setActiveKey(null);
+        }
+        // On poll failure keep last good result
+      } finally {
+        inFlight.current = false;
+        setLoading(false);
+        setRefreshing(false);
+      }
+    },
+    [t],
+  );
 
   async function onSubmit(e?: FormEvent) {
     e?.preventDefault();
-    if (!cdKey.trim()) return;
-    setLoading(true);
-    setResult(null);
-    setCopiedId(null);
-    setExpanded({});
-    try {
-      const res = await fetch("/api/query", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ cdKey: cdKey.trim() }),
-        cache: "no-store",
-      });
-      const data = (await res.json()) as QueryResult;
-      setResult(data);
-    } catch {
-      setResult({ ok: false, message: t("main.networkError") });
-    } finally {
-      setLoading(false);
-    }
+    const key = cdKey.trim();
+    if (!key) return;
+    await fetchInbox(key, "open");
   }
+
+  // Auto-refresh while a valid inbox is open
+  useEffect(() => {
+    if (!activeKey || !result?.ok) return;
+
+    const tick = () => {
+      if (document.visibilityState === "hidden") return;
+      void fetchInbox(activeKey, "poll");
+    };
+
+    const id = window.setInterval(tick, POLL_INTERVAL_MS);
+
+    const onVisible = () => {
+      if (document.visibilityState === "visible") {
+        void fetchInbox(activeKey, "poll");
+      }
+    };
+    document.addEventListener("visibilitychange", onVisible);
+
+    return () => {
+      window.clearInterval(id);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [activeKey, result?.ok, fetchInbox]);
 
   async function copyCode(code: string, id: string) {
     try {
@@ -140,6 +198,26 @@ export default function InboxConsole() {
 
           {result?.ok ? (
             <div className="inbox-area">
+              <div className="inbox-live-bar" aria-live="polite">
+                <span className={`live-dot${refreshing ? " is-pulse" : ""}`} aria-hidden="true" />
+                <span>
+                  {refreshing ? t("main.autoRefreshing") : t("main.autoRefreshOn")}
+                  {lastCheckedAt
+                    ? ` · ${t("main.lastChecked", {
+                        time: lastCheckedAt.toLocaleTimeString(),
+                      })}`
+                    : ""}
+                </span>
+                <button
+                  type="button"
+                  className="live-refresh-btn"
+                  disabled={refreshing || loading}
+                  onClick={() => activeKey && void fetchInbox(activeKey, "poll")}
+                >
+                  {t("main.refreshNow")}
+                </button>
+              </div>
+
               <div className="inbox-summary">
                 <div>
                   <span className="label">{t("main.mailbox")}</span>
@@ -168,6 +246,7 @@ export default function InboxConsole() {
                   <div className="empty-icon">0</div>
                   <h3>{t("main.noRecentMail")}</h3>
                   <p>{t("main.noRecentMailText")}</p>
+                  <p className="auto-wait-hint">{t("main.autoWaitHint")}</p>
                 </div>
               ) : (
                 result.messages.map((msg) => (

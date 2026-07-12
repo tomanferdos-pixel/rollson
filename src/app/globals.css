@@ -332,3 +332,30 @@ html.dark-mode .brand-mark{
 /* light theme + toggle disabled */
 .theme-toggle-header{display:none!important}
 html{color-scheme:dark}
+
+/* Live inbox auto-refresh bar */
+.inbox-live-bar{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  margin:14px 0 4px;padding:10px 14px;border-radius:12px;
+  border:1px solid #4a4a4a;background:#2f2f2f;color:#cfcfcf;font-size:13px;font-weight:600;
+}
+.live-dot{
+  width:8px;height:8px;border-radius:50%;background:#6b6b6b;flex-shrink:0;
+  box-shadow:0 0 0 0 #8fbc8f00;
+}
+.live-dot.is-pulse{
+  background:#8fbc8f;
+  animation:livePulse 1.2s ease-in-out infinite;
+}
+@keyframes livePulse{
+  0%{box-shadow:0 0 0 0 #8fbc8f66}
+  70%{box-shadow:0 0 0 8px #8fbc8f00}
+  100%{box-shadow:0 0 0 0 #8fbc8f00}
+}
+.live-refresh-btn{
+  margin-left:auto;border:1px solid #555;background:#3a3a3a;color:#f0f0f0;
+  border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer;
+}
+.live-refresh-btn:hover:not(:disabled){background:#454545;border-color:#666}
+.live-refresh-btn:disabled{opacity:.55;cursor:default}
+.auto-wait-hint{color:#a3a3a3!important;margin-top:8px!important;font-size:13px}
