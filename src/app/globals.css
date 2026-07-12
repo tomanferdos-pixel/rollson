@@ -360,24 +360,46 @@ html{color-scheme:dark}
 .live-refresh-btn:disabled{opacity:.55;cursor:default}
 .auto-wait-hint{color:#a3a3a3!important;margin-top:8px!important;font-size:13px}
 
-/* Console title avatar */
-.console-title-row{
+/* Console header: avatar + text column */
+.console-header-main{
   display:flex;
   align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
+  gap:18px;
 }
-.console-title-row h1{
+.console-header-text{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
+  gap:6px;
+}
+.console-header-text .label{
   margin:0;
-  line-height:1.15;
+  line-height:1.2;
+}
+.console-header-text h1{
+  margin:0 !important;
+  line-height:1.2 !important;
+  padding:0;
+}
+.console-header-text .console-intro{
+  margin:0 !important;
+  line-height:1.45;
 }
 .console-avatar{
-  width:56px;
-  height:56px;
+  width:80px;
+  height:80px;
   border-radius:50%;
   object-fit:cover;
+  object-position:center;
   flex-shrink:0;
+  display:block;
   border:2px solid #4a4a4a;
-  box-shadow:0 8px 22px #00000045;
+  box-shadow:0 10px 26px #00000050;
   background:#2a2a2a;
 }
+@media (max-width:560px){
+  .console-header-main{gap:14px}
+  .console-avatar{width:68px;height:68px}
+}
+

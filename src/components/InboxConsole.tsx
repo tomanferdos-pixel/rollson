@@ -164,19 +164,19 @@ export default function InboxConsole() {
       <section className="inbox-center container">
         <section className="mail-console inbox-console" id="inbox" aria-label="Mailbox query console">
           <div className="console-header">
-            <div>
-              <p className="label">{t("main.badge")}</p>
-              <div className="console-title-row">
-                <img
-                  className="console-avatar"
-                  src="/ROLLSON.png"
-                  alt="Rollson"
-                  width={56}
-                  height={56}
-                />
+            <div className="console-header-main">
+              <img
+                className="console-avatar"
+                src="/ROLLSON.png"
+                alt="Rollson"
+                width={80}
+                height={80}
+              />
+              <div className="console-header-text">
+                <p className="label">{t("main.badge")}</p>
                 <h1>{t("main.title")}</h1>
+                <p className="console-intro">{t("main.intro")}</p>
               </div>
-              <p className="console-intro">{t("main.intro")}</p>
             </div>
           </div>
 
