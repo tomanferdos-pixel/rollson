@@ -176,9 +176,9 @@ export default function InboxConsole() {
 
               {!hasMessages ? (
                 <div className="empty-state compact">
-                  <div className="empty-icon">@</div>
-                  <h3>{t("main.ready")}</h3>
-                  <p>{t("main.readyText")}</p>
+                  <div className="empty-icon">0</div>
+                  <h3>{t("main.noRecentMail")}</h3>
+                  <p>{t("main.noRecentMailText")}</p>
                 </div>
               ) : (
                 result.messages.map((msg) => (

@@ -29,6 +29,9 @@ const en: Dict = {
   "main.copyFailed": "Copy failed. Please copy manually.",
   "main.ready": "Ready",
   "main.readyText": "Enter a valid CD key to check its authorized inbox.",
+  "main.noRecentMail": "No recent mail",
+  "main.noRecentMailText":
+    "No inbox messages were found inside the active query window.",
   "main.mailbox": "Mailbox",
   "main.window": "Window",
   "main.messages": "Messages",
@@ -104,6 +107,9 @@ const ru: Dict = {
   "main.copyFailed": "Не удалось скопировать. Скопируйте вручную.",
   "main.ready": "Готово",
   "main.readyText": "Введите действительный CD-ключ для доступа к почтовому ящику.",
+  "main.noRecentMail": "Нет свежей почты",
+  "main.noRecentMailText":
+    "В активном окне запроса писем в ящике не найдено.",
   "main.mailbox": "Ящик",
   "main.window": "Окно",
   "main.messages": "Письма",
@@ -176,6 +182,9 @@ const fr: Dict = {
   "main.openInbox": "Ouvrir la boîte",
   "main.ready": "Prêt",
   "main.readyText": "Saisissez une clé CD valide pour consulter la boîte autorisée.",
+  "main.noRecentMail": "Aucun mail récent",
+  "main.noRecentMailText":
+    "Aucun message n'a été trouvé dans la fenêtre de requête active.",
   "main.verificationCode": "Code de vérification",
   "main.copy": "Copier",
   "main.copied": "Copié",
@@ -198,6 +207,9 @@ const es: Dict = {
   "main.openInbox": "Abrir bandeja",
   "main.ready": "Listo",
   "main.readyText": "Introduce una clave CD válida para consultar su bandeja autorizada.",
+  "main.noRecentMail": "Sin correo reciente",
+  "main.noRecentMailText":
+    "No se encontraron mensajes en la ventana de consulta activa.",
   "main.verificationCode": "Código de verificación",
   "main.copy": "Copiar",
   "main.copied": "Copiado",
@@ -220,6 +232,9 @@ const ar: Dict = {
   "main.openInbox": "فتح البريد",
   "main.ready": "جاهز",
   "main.readyText": "أدخل مفتاح CD صالحًا للوصول إلى صندوق البريد المصرح به.",
+  "main.noRecentMail": "لا بريد حديث",
+  "main.noRecentMailText":
+    "لم يتم العثور على رسائل داخل نافذة الاستعلام النشطة.",
   "main.verificationCode": "رمز التحقق",
   "main.copy": "نسخ",
   "main.copied": "تم النسخ",
