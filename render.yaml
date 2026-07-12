@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: rollson
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: APP_VERSION
+        value: Rollson-v1.0.0
+      - key: MAIL_WINDOW_MINUTES
+        value: "10"
+      - key: RATE_LIMIT_PER_MINUTE
+        value: "30"
+      - key: KEYS_JSON
+        sync: false
+      - key: MS_CLIENT_ID
+        sync: false
+      - key: MS_CLIENT_SECRET
+        sync: false
+      - key: MS_TENANT_ID
+        value: common
