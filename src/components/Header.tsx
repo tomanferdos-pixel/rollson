@@ -23,7 +23,7 @@ export default function Header({ active = "inbox", className }: Props) {
         <span className="brand-word">{APP_NAME}</span>
       </Link>
       <div className="topbar-center-name" aria-label="Site brand">
-        {APP_NAME}
+        FunPay
       </div>
       <nav className="top-actions" aria-label="Primary navigation">
         <LanguageSwitcher />
