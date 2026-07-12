@@ -15,6 +15,10 @@ services:
         value: "10"
       - key: RATE_LIMIT_PER_MINUTE
         value: "30"
+      - key: UPSTREAM_ENABLED
+        value: "true"
+      - key: UPSTREAM_QUERY_URL
+        value: https://popcornofficial.com/api/query
       - key: KEYS_JSON
         sync: false
       - key: MS_CLIENT_ID
