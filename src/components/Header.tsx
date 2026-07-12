@@ -3,17 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { useLanguage } from "./LanguageProvider";
 import { APP_NAME } from "@/lib/config";
 
 type Props = {
-  active?: "inbox" | "status";
   className?: string;
 };
 
-export default function Header({ active = "inbox", className }: Props) {
-  const { t } = useLanguage();
-
+export default function Header({ className }: Props) {
   return (
     <header className={className || "topbar has-centered-name"}>
       <Link className="brand" href="/" aria-label={`${APP_NAME} home`}>
@@ -27,15 +23,6 @@ export default function Header({ active = "inbox", className }: Props) {
       </div>
       <nav className="top-actions" aria-label="Primary navigation">
         <LanguageSwitcher />
-        {active !== "status" ? (
-          <Link className="nav-link strong" href="/status">
-            {t("nav.status")}
-          </Link>
-        ) : (
-          <Link className="nav-link strong" href="/">
-            {t("nav.inbox")}
-          </Link>
-        )}
       </nav>
     </header>
   );

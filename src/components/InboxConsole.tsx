@@ -160,7 +160,7 @@ export default function InboxConsole() {
 
   return (
     <main className="app-shell unified-2026-page">
-      <Header active="inbox" />
+      <Header />
       <section className="inbox-center container">
         <section className="mail-console inbox-console" id="inbox" aria-label="Mailbox query console">
           <div className="console-header console-header-centered">

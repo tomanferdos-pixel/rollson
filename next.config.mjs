@@ -5,7 +5,10 @@ const nextConfig = {
     unoptimized: true,
   },
   async redirects() {
-    return [{ source: "/about", destination: "/", permanent: true }];
+    return [
+      { source: "/about", destination: "/", permanent: true },
+      { source: "/status", destination: "/", permanent: true },
+    ];
   },
 };
 

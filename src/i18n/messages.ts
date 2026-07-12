@@ -15,7 +15,6 @@ export function isLocale(value: string | null | undefined): value is Locale {
 type Dict = Record<string, string>;
 
 const en: Dict = {
-  "nav.status": "Status",
   "nav.inbox": "Inbox",
   "common.rights": "All Rights Reserved to",
   "main.badge": "Secure inbox lookup",
@@ -49,23 +48,10 @@ const en: Dict = {
   "main.hideFullEmail": "Hide full email",
   "main.originalEmailHint": "Original email view. Links open in a new tab.",
   "main.noFullEmail": "No full email content available.",
-  "status.systemStatus": "System status",
-  "status.overview": "System overview",
-  "status.online": "Online",
-  "status.version": "Version",
-  "status.mailWindow": "Mail Window",
-  "status.rateLimit": "Rate Limit",
-  "status.checkedAt": "Checked At",
-  "status.healthApi": "Health API",
-  "status.runtime": "Runtime",
-  "status.minutes": "{value} minutes",
-  "status.requestsPerMinute": "{value} requests per minute",
-  "status.nextServer": "Next.js server",
 };
 
 const ru: Dict = {
   ...en,
-  "nav.status": "Статус",
   "nav.inbox": "Почта",
   "common.rights": "Все права принадлежат",
   "main.badge": "Безопасный доступ к почте",
@@ -99,23 +85,10 @@ const ru: Dict = {
   "main.hideFullEmail": "Скрыть письмо",
   "main.originalEmailHint": "Оригинальный вид письма. Ссылки открываются в новой вкладке.",
   "main.noFullEmail": "Полный текст письма недоступен.",
-  "status.systemStatus": "Статус системы",
-  "status.overview": "Обзор системы",
-  "status.online": "Онлайн",
-  "status.version": "Версия",
-  "status.mailWindow": "Окно писем",
-  "status.rateLimit": "Лимит запросов",
-  "status.checkedAt": "Проверено",
-  "status.healthApi": "Health API",
-  "status.runtime": "Среда",
-  "status.minutes": "{value} минут",
-  "status.requestsPerMinute": "{value} запросов в минуту",
-  "status.nextServer": "Сервер Next.js",
 };
 
 const fr: Dict = {
   ...en,
-  "nav.status": "État",
   "nav.inbox": "Boîte",
   "common.rights": "Tous droits réservés à",
   "main.badge": "Consultation sécurisée",
@@ -131,13 +104,10 @@ const fr: Dict = {
   "main.verificationCode": "Code de vérification",
   "main.copy": "Copier",
   "main.copied": "Copié",
-  "status.systemStatus": "État du système",
-  "status.online": "En ligne",
 };
 
 const es: Dict = {
   ...en,
-  "nav.status": "Estado",
   "nav.inbox": "Bandeja",
   "common.rights": "Todos los derechos reservados a",
   "main.badge": "Consulta segura",
@@ -153,13 +123,10 @@ const es: Dict = {
   "main.verificationCode": "Código de verificación",
   "main.copy": "Copiar",
   "main.copied": "Copiado",
-  "status.systemStatus": "Estado del sistema",
-  "status.online": "En línea",
 };
 
 const ar: Dict = {
   ...en,
-  "nav.status": "الحالة",
   "nav.inbox": "البريد",
   "common.rights": "جميع الحقوق محفوظة لـ",
   "main.badge": "استعلام آمن عن البريد",
@@ -175,8 +142,6 @@ const ar: Dict = {
   "main.verificationCode": "رمز التحقق",
   "main.copy": "نسخ",
   "main.copied": "تم النسخ",
-  "status.systemStatus": "حالة النظام",
-  "status.online": "متصل",
 };
 
 export const MESSAGES: Record<Locale, Dict> = { en, fr, es, ru, ar };
