@@ -166,7 +166,16 @@ export default function InboxConsole() {
           <div className="console-header">
             <div>
               <p className="label">{t("main.badge")}</p>
-              <h1>{t("main.title")}</h1>
+              <div className="console-title-row">
+                <img
+                  className="console-avatar"
+                  src="/ROLLSON.png"
+                  alt="Rollson"
+                  width={56}
+                  height={56}
+                />
+                <h1>{t("main.title")}</h1>
+              </div>
               <p className="console-intro">{t("main.intro")}</p>
             </div>
           </div>
